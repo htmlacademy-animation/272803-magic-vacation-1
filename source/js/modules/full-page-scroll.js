@@ -44,8 +44,16 @@ export default class FullPageScroll {
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);
     });
+
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
-    this.screenElements[this.activeScreen].classList.add(`active`);
+
+    // temp
+    window.setTimeout(() => {
+      this.screenElements[this.activeScreen].classList.add(`active`);
+    }, 0);
+
+
+    // this.screenElements[this.activeScreen].classList.add(`active`);
   }
 
   changeActiveMenuItem() {
