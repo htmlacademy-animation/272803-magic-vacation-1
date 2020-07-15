@@ -1,0 +1,16 @@
+.curtain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $c-dark;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+
+  &.opened {
+    transition: transform 0.35s ease-out 0s;
+    transform: scaleY(1);
+    z-index: 10;
+  }
+}
