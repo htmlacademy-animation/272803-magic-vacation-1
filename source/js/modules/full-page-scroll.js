@@ -6,6 +6,7 @@ export default class FullPageScroll {
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.curtain = document.querySelector(`.curtain`);
 
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
@@ -19,11 +20,11 @@ export default class FullPageScroll {
     this.onUrlHashChanged();
   }
 
-  onScroll(evt) {
+  async onScroll(evt) {
     const currentPosition = this.activeScreen;
     this.reCalculateActiveScreenPosition(evt.deltaY);
     if (currentPosition !== this.activeScreen) {
-      this.changePageDisplay();
+      await this.changePageDisplay();
     }
   }
 
@@ -33,23 +34,30 @@ export default class FullPageScroll {
     this.changePageDisplay();
   }
 
-  changePageDisplay() {
-    this.changeVisibilityDisplay();
+  async changePageDisplay() {
+    await this.changeVisibilityDisplay();
     this.changeActiveMenuItem();
     this.emitChangeDisplayEvent();
   }
 
-  changeVisibilityDisplay() {
-    this.screenElements.forEach((screen) => {
+  async changeVisibilityDisplay() {
+    for (const screen of this.screenElements) {
+      if (screen.classList.contains(`active`) && screen.classList.contains(`screen--story`)
+          && this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
+        await this.showCurtain();
+      }
+
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);
-    });
+    }
+
 
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
 
     // temp
     window.setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
+      this.removeCurtain();
     }, 0);
 
 
@@ -82,5 +90,21 @@ export default class FullPageScroll {
     } else {
       this.activeScreen = Math.max(0, --this.activeScreen);
     }
+  }
+
+  showCurtain() {
+    return new Promise((resolve) => {
+      const tranisitionendHandler = () => {
+        this.curtain.removeEventListener(`transitionend`, tranisitionendHandler);
+        resolve();
+      };
+
+      this.curtain.addEventListener(`transitionend`, tranisitionendHandler);
+      this.curtain.classList.add(`opened`);
+    });
+  }
+
+  removeCurtain() {
+    this.curtain.classList.remove(`opened`);
   }
 }
