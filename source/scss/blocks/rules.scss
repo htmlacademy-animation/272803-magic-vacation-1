@@ -236,8 +236,29 @@
 
 .rules__link {
   position: absolute;
+  display: inline-block;
   bottom: 6rem;
   right: 5.6rem;
+  border-radius: 3.5rem;
+  overflow: hidden;
+
+  &::before {
+    display: inline-block;
+    transition: transform 0.35s ease-out 0s;
+  }
+
+  &.hidden {
+    .rules__link-text {
+      opacity: 0;
+      transition: none;
+    }
+
+    &::before {
+      transition: none;
+      transform: translate(50%, -50%);
+    }
+
+  }
 
   @media (min-width: $stop-scaling) {
     bottom: 60px;
@@ -258,4 +279,8 @@
     bottom: 2rem;
     right: 1.5rem;
   }
+}
+
+.rules__link-text {
+  transition: opacity 0.15s ease-out 0.2s;
 }
