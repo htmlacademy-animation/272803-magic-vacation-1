@@ -45,6 +45,8 @@ export default class FullPageScroll {
       if (screen.classList.contains(`active`) && screen.classList.contains(`screen--story`)
           && this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
         await this.showCurtain();
+      } else if (screen.classList.contains(`active`) && screen.classList.contains(`screen--rules`)) {
+        screen.querySelector(`.rules__link`).classList.add(`hidden`);
       }
 
       screen.classList.add(`screen--hidden`);
