@@ -25,13 +25,30 @@
 
 .intro__title {
   margin: 0;
-  max-width: 99rem;
+  max-width: 99.8rem;
   text-transform: uppercase;
   font-family: $font-alt;
   font-weight: 400;
   font-size: 12rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+
+  .text__word {
+    display: block;
+    overflow: hidden;
+  }
+
+  .text__letter {
+    display: inline-block;
+    transform: translate3d(0, 120%, 0);
+  }
+
+  &.animate {
+    .text__letter {
+      transform: translate3d(0, 0, 0);
+    }
+
+  }
 
   @media (min-width: $stop-scaling) {
     max-width: 990px;
