@@ -14,4 +14,3 @@ const [titleTypo, dateTypo] = [title, date].map((element) => {
 });
 
 export {titleTypo, dateTypo};
-
