@@ -1,7 +1,5 @@
 import throttle from 'lodash/throttle';
-import intro from './intro.js';
-
-const introTypo = intro().typo;
+import {titleTypo as introTitleTypo, dateTypo as introDateTypo} from './intro.js';
 
 export default class FullPageScroll {
   constructor() {
@@ -51,7 +49,8 @@ export default class FullPageScroll {
       } else if (screen.classList.contains(`active`) && screen.classList.contains(`screen--rules`)) {
         screen.querySelector(`.rules__link`).classList.add(`hidden`);
       } else if (screen.classList.contains(`active`) && screen.classList.contains(`screen--intro`)) {
-        introTypo.reset();
+        introTitleTypo.reset();
+        introDateTypo.reset();
       }
 
       screen.classList.add(`screen--hidden`);
@@ -62,12 +61,13 @@ export default class FullPageScroll {
     currentScreen.classList.remove(`screen--hidden`);
 
     // temp
-    window.setTimeout(() => {
+    window.setTimeout(async () => {
       currentScreen.classList.add(`active`);
       this.removeCurtain();
 
       if (currentScreen.classList.contains(`screen--intro`)) {
-        introTypo.animate();
+        await introTitleTypo.animate();
+        await introDateTypo.animate();
       }
     }, 0);
 

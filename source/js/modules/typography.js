@@ -1,16 +1,40 @@
+const animationLogicSettings = {
+  startIndex: -2,
+  itemIterationStep: 2,
+  groupItems: 3
+};
+
 export default class Typography {
   constructor(element, options) {
-    const {duration, delayIter, startDelay} = options;
-    this._TIME_SPACE = 100;
+    const {duration, delayIter, startDelay, property} = options;
 
     this._element = element;
     this._duration = duration;
     this._delayIter = delayIter;
     this._delay = startDelay;
+    this._property = property;
 
     this._animateLetter = this._animateLetter.bind(this);
 
     this._prepareText();
+    this._addDTransitions();
+  }
+
+  _addDTransitions() {
+    const letters = this._element.querySelectorAll(`.text__letter`);
+    const {startIndex, groupItems, itemIterationStep} = animationLogicSettings;
+
+    for (let i = startIndex; i < letters.length; i += groupItems) {
+      for (let j = i; j <= i + groupItems * itemIterationStep && j <= letters.length; j += itemIterationStep) {
+        const letter = letters[j];
+
+        if (letter) {
+          this._delay += this._delayIter;
+
+          letter.style.transition = `${this._property} ${this._duration}ms ease-out ${this._delay}ms`;
+        }
+      }
+    }
   }
 
   _createSpan(letter) {
@@ -18,19 +42,17 @@ export default class Typography {
     span.classList.add(`text__letter`);
     span.textContent = letter;
 
-    this._delay += this._delayIter;
-
-    span.style.transition = `transform ${this._duration}ms ease-out ${this._delay}ms`;
-
     return span;
   }
 
   _prepareText() {
     const text = this._element.textContent;
-    const words = text.trim().split(` `).filter((item) => item.length);
+    const words = text
+      .trim()
+      .split(` `)
+      .filter((item) => item.length);
 
     const content = words.reduce((fragment, word) => {
-      console.log('word', word);
       const span = document.createElement(`span`);
       span.classList.add(`text__word`);
 
@@ -63,7 +85,9 @@ export default class Typography {
   }
 
   animate() {
-    const promises = [...this._element.querySelectorAll(`.text__letter`)].map(this._animateLetter);
+    const promises = [...this._element.querySelectorAll(`.text__letter`)].map(
+        this._animateLetter
+    );
     this._element.classList.add(`animate`);
 
     return Promise.all(promises);

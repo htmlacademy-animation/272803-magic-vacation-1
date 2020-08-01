@@ -1,14 +1,17 @@
 import Typography from './typography.js';
 
-export default () => {
-  const intro = document.querySelector(`.intro`);
-  const title = intro.querySelector(`.intro__title`);
+const intro = document.querySelector(`.intro`);
+const title = intro.querySelector(`.intro__title`);
+const date = intro.querySelector(`.intro__date`);
 
-  const typo = new Typography(title, {
+const [titleTypo, dateTypo] = [title, date].map((element) => {
+  return new Typography(element, {
     duration: 200,
     delayIter: 20,
-    startDelay: 0
+    startDelay: 0,
+    property: `transform`
   });
+});
 
-  return {typo};
-};
+export {titleTypo, dateTypo};
+
