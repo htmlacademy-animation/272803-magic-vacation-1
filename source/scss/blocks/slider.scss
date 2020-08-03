@@ -151,7 +151,13 @@
   display: flex;
   justify-content: space-between;
   width: 17rem;
+  opacity: 0;
   z-index: 1;
+
+  .active & {
+    opacity: 1;
+    transition: opacity 300ms linear 0s;
+  }
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
@@ -173,6 +179,30 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+
+  .active & {
+    animation-name: move-button-prev;
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(0.17, 0.67, 0.56, 1.31);
+    animation-delay: 100ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+
+    &--prev {
+      animation-name: move-button-prev;
+    }
+
+    &--next {
+      animation-name: move-button-next;
+    }
+
+    svg {
+      opacity: 1;
+      transition: opacity 100ms linear 300ms;
+    }
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -196,6 +226,7 @@
     width: 1rem;
     height: 2rem;
     pointer-events: none;
+    opacity: 0;
 
     @media (min-width: $stop-scaling) {
       width: 10px;
@@ -251,6 +282,12 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+  opacity: 0;
+
+  .active & {
+    opacity: 1;
+    transition: opacity 300ms linear 0s;
+  }
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
@@ -292,5 +329,25 @@
       height: 0.4rem;
       background-color: $c-light;
     }
+  }
+}
+
+@keyframes move-button-prev {
+  0% {
+    transform: translateX(-100%) rotate(-90deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes move-button-next {
+  0% {
+    transform: translateX(100%) rotate(90deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(0deg);
   }
 }
