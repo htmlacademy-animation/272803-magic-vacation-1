@@ -9,7 +9,7 @@
       fill="freeze"
      />
     <g id="body">
-      <g id="busket" transform="scale(1 0.9) skewX(5)">
+      <g id="busket" transform="scale(1 0.9) skewX(5)" style="transform-origin: 0 205px;">
         <animateTransform
           attributeName="transform"
           type="scale"
@@ -306,7 +306,7 @@
         <path d="M206.26,259.82h-72l-2.13-14.19H200.6a9.92,9.92,0,0,1,9.9,9.93A4.26,4.26,0,0,1,206.26,259.82Z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
         <line x1="151.57" y1="195.44" x2="209.05" y2="195.44" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
       </g>
-      <g id="plant" opacity="0">
+      <g id="plant" opacity="0" style="transform-origin: 148.5px 328px;">
         <animate
           attributeType="CSS"
           attributeName="opacity"
