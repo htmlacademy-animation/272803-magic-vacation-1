@@ -1,5 +1,6 @@
 import throttle from 'lodash/throttle';
 import {titleTypo as introTitleTypo, dateTypo as introDateTypo} from './intro.js';
+import {paths} from './prizes.js';
 
 export default class FullPageScroll {
   constructor() {
@@ -12,6 +13,8 @@ export default class FullPageScroll {
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
+
+    this.wasVisitedPrizesPage = false;
   }
 
   init() {
@@ -46,6 +49,16 @@ export default class FullPageScroll {
       if (screen.classList.contains(`active`) && screen.classList.contains(`screen--story`)
           && this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
         await this.showCurtain();
+
+        if (!this.wasVisitedPrizesPage) {
+          const firstPrizeImage = this.screenElements[this.activeScreen].querySelectorAll(`.prizes__item`)[0].querySelector(`img`);
+          firstPrizeImage.src = this.getRandomPath(paths[0]);
+
+          // console.log('setttt src');
+
+          this.wasVisitedPrizesPage = true;
+        }
+
       } else if (screen.classList.contains(`active`) && screen.classList.contains(`screen--rules`)) {
         screen.querySelector(`.rules__link`).classList.add(`hidden`);
       } else if (screen.classList.contains(`active`) && screen.classList.contains(`screen--intro`)) {
@@ -68,6 +81,11 @@ export default class FullPageScroll {
       if (currentScreen.classList.contains(`screen--intro`)) {
         await introTitleTypo.animate();
         await introDateTypo.animate();
+      } else if (currentScreen.classList.contains(`screen--prizes`) && !this.wasVisitedPrizesPage) {
+        const firstPrizeImage = currentScreen.querySelectorAll(`.prizes__item`)[0].querySelector(`img`);
+        firstPrizeImage.src = this.getRandomPath(paths[0]);
+
+        this.wasVisitedPrizesPage = true;
       }
     }, 0);
 
@@ -117,5 +135,9 @@ export default class FullPageScroll {
 
   removeCurtain() {
     this.curtain.classList.remove(`opened`);
+  }
+
+  getRandomPath(path) {
+    return `${path}?${Math.floor(Math.random() * 1000000000)}`;
   }
 }
