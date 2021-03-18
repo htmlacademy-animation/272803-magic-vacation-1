@@ -20,23 +20,54 @@
     <path id="plant-back-stem" d="M263,327.88s-4.91-70.27,5.54-80.72" fill="none" stroke="#e81a5a" stroke-miterlimit="10" stroke-width="2"/>
   </g>
   <!-- <g id="case" transform="translate(-44 -165) rotate(30) scale(0)" style="transform-origin: 223px 276px;"> -->
-  <g id="case" transform="translate(-224 -275) rotate(30) scale(0.2)" style="transform-origin: 223px 276px;">
+  <g id="case" transform="translate(-224 -275) rotate(30) scale(0 0)" style="transform-origin: 223px 276px;">
     <animateMotion
       calcMode="linear"
       begin="0ms"
-      keyPoints="0.09; 0.09; 1"
-      keyTimes="0; 0.9; 1"
-      dur="500000ms"
+      keyPoints="0; 0.09; 0.09; 1"
+      keyTimes="0; 0.1983; 0.3226; 1"
+      dur="2017ms"
       fill="freeze"
     >
       <mPath href="#path" />
     </animateMotion>
-    <!-- <animateTransform
-      begin="#cloudsEntering.end"
-      duration="150ms"
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      from="-224 -275"
+      to="-224 -275"
+      dur="2017ms"
+      fill="freeze"
+    />
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
       calcMode="spline"
-      keySplines="0 0 0.58 1.0"
-    /> -->
+      values="30; 30; -30; 20; 18.29; -6.48; 0"
+      keyTimes="0; 0.3227; 0.5206; 0.7025; 0.7853; 0.9504; 1"
+      keySplines="0.33, 0, 0.67, 1;
+                  0.33, 0, 0.67, 1;
+                  0.33, 0, 0.67, 1;
+                  0.33, 0, 0.67, 1;
+                  0.33, 0, 0.67, 1;
+                  0.17, 0, 0.83, 1"
+      dur="2017ms"
+      fill="freeze"
+      additive="sum"
+    />
+    <animateTransform
+      attributeName="transform"
+      type="scale"
+      calcMode="spline"
+      values="0 0; 0 0; 0.2 0.2; 1 1"
+      keyTimes="0; 0.1983; 0.3226; 1"
+      keySplines="0 0 0.58 1.0;
+                  0 0 0.58 1.0;
+                  0 0 0.58 1.0"
+      dur="2017ms"
+      fill="freeze"
+      additive="sum"
+    />
     <g id="case-box">
       <path d="M251.89,328.88a3.54,3.54,0,0,0,3.53-3.53v-5.07a3.53,3.53,0,1,0-7.06,0v5.07a3.55,3.55,0,0,0,3.53,3.53" fill="#a67ee5"/>
       <path d="M251.89,328.88a3.54,3.54,0,0,0,3.53-3.53v-5.07a3.53,3.53,0,1,0-7.06,0v5.07A3.55,3.55,0,0,0,251.89,328.88Z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
@@ -67,7 +98,7 @@
       </g>
     </g>
   </g>
-  <g id="clouds" transform="translate(35 0)">
+  <g id="clouds" transform="translate(35 0)" opacity="0">
     <animate
       attributeType="CSS"
       attributeName="opacity"
@@ -83,11 +114,11 @@
       calcMode="spline"
       values="35 0; 0 0"
       keySplines="0 0 0.58 1.0"
-      dur="350ms"
+      dur="400ms"
       fill="freeze"
     />
 
-    <!-- <animate
+    <animate
       attributeType="CSS"
       attributeName="opacity"
       from="1"
@@ -106,7 +137,7 @@
       dur="300ms"
       fill="freeze"
       additive="sum"
-    /> -->
+    />
     <g id="cloud-left">
       <g id="cloud-left-top">
         <path d="M85.22,67.45H57.86a12.4,12.4,0,1,0-24.8,0H15.13" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
@@ -148,15 +179,13 @@
       attributeName="transform"
       type="rotate"
       calcMode="spline"
-      values="7; 1; -5; -0.5; 4; 1; -2; 0; 0; 7"
-      keyTimes="0; 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.9; 1";
+      values="6; 1; -4; -1; 2; 0; 0; 7"
+      keyTimes="0; 0.14; 0.28; 0.42; 0.56; 0.7; 0.84; 1";
       keySplines="0.42, 0, 1.0,  1.0;
                   0, 0, 0.58, 1.0;
                   0.42, 0, 1.0,  1.0;
                   0, 0, 0.58, 1.0;
-                  0.42, 0, 1.0,  1.0;
                   0, 0, 0.58, 1.0;
-                  0.42, 0, 1.0,  1.0;
                   0  0  1.0   1.0;
                   0, 0, 0.58, 1.0"
       dur="2000ms"
@@ -168,6 +197,4 @@
   <g id="ground">
     <line x1="41.13" y1="329" x2="319.13" y2="329" fill="none" stroke="#fff" stroke-width="2"/>
   </g>
-  <circle cx="223" cy="276" r="5" fill="#ffffff" />
-  <use xlink:href="#path" />
 </svg>
