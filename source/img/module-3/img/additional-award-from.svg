@@ -74,7 +74,7 @@
 
     </g>
 
-    <g id="leaves-left" style="transform-origin: 178px 289px;" transform="rotate(63)">
+    <g id="leaves-left" style="transform-origin: 178px 289px;" transform="rotate(64)">
       <path d="M141.77,204.16c24.1,32.45,35.81,84,35.81,84" fill="none" stroke="#3b7bf2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
       <path d="M125.73,196.22c6.54,7.51,17.16,9,17.16,9s0-10.72-6.53-18.22-17.17-9-17.17-9,0,10.72,6.54,18.22" fill="#76abff"/>
       <path d="M153.17,206.54c-2.69,9.58,1.91,19.27,1.91,19.27s9-5.86,11.67-15.45-1.91-19.27-1.91-19.27-9,5.86-11.67,15.45" fill="#3b7bf2"/>
@@ -89,9 +89,57 @@
       <path d="M203.69,264.19c-6.17,7.08-16.19,8.44-16.19,8.44s0-10.11,6.16-17.18S209.85,247,209.85,247s0,10.11-6.16,17.19" fill="#76abff"/>
     </g>
 
-    <g id="bird" style="transform-origin: 282px 185px;" transform="translate(-50 70) rotate(-35)">
-      <path d="M279.2,183.8A4.89,4.89,0,0,1,283,179h0l21.07-5.4c-7.78,14.84-19.18,15.07-20,15.07h0a4.9,4.9,0,0,1-4.85-4.9" fill="#fff"/>
-      <path d="M262.24,169.86l10.76,0a4.65,4.65,0,0,1,4.41-2.9,3.91,3.91,0,0,1,3.48,1.76,13.39,13.39,0,0,1,1.37,2.59c0.63,1.57,4,15.8,5.89,19.16,1.1,2,4.39,7.16,4.39,7.16a2.3,2.3,0,0,1,.31,1.15V208s-3.11-1.08-3.11-3.91v-6.53c-1.91.27-6-1.65-8.33-2.88a12.82,12.82,0,0,1-6.36-6.76,12.33,12.33,0,0,1-.11-9.16,7.13,7.13,0,0,0,.79-2.91c-0.06-1.14-1.39-2.72-2.18-4.05Z" fill="#fff"/>
+    <!-- <g id="bird" style="transform-origin: 282px 185px;" transform="translate(-50 70) rotate(-35)"> -->
+    <g id="bird" style="transform-origin: 282px 185px;">
+      <!-- <path id="bird-wing" style="transform-origin: 282px 185px;" transform="translate(-5) rotate(-5)" d="M279.2,183.8A4.89,4.89,0,0,1,283,179h0l21.07-5.4c-7.78,14.84-19.18,15.07-20,15.07h0a4.9,4.9,0,0,1-4.85-4.9" fill="#fff"/> -->
+      <path id="bird-wing" opacity="0" style="transform-origin: 282px 185px;" transform="translate(-5, 0) rotate(-20) scale(0.75)" d="M279.2,183.8A4.89,4.89,0,0,1,283,179h0l21.07-5.4c-7.78,14.84-19.18,15.07-20,15.07h0a4.9,4.9,0,0,1-4.85-4.9" fill="#fff">
+        <animate
+          attributeType="CSS"
+          attributeName="opacity"
+          calcMode="discrete"
+          values="1; 0; 1; 0; 1"
+          keyTimes="0; 0.333333; 0.5; 0.833333; 1"
+          begin="500ms"
+          dur="150ms"
+          repeatCount="indefinite"
+        />
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          calcMode="discrete"
+          values="-5 0; 0 0; -5 0"
+          keyTimes="0; 0.5; 1"
+          begin="500ms"
+          dur="150ms"
+          fill="freeze"
+          repeatCount="indefinite"
+        />
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          calcMode="discrete"
+          values="-20; -5; -20"
+          keyTimes="0; 0.5; 1"
+          begin="500ms"
+          dur="150ms"
+          additive="sum"
+          fill="freeze"
+          repeatCount="indefinite"
+        />
+        <animateTransform
+          attributeName="transform"
+          type="scale"
+          calcMode="discrete"
+          values="0.75; 1; 0.75"
+          keyTimes="0; 0.5; 1"
+          begin="500ms"
+          dur="150ms"
+          additive="sum"v
+          fill="freeze"
+          repeatCount="indefinite"
+        />
+      </path>
+      <path id="bird-body" d="M262.24,169.86l10.76,0a4.65,4.65,0,0,1,4.41-2.9,3.91,3.91,0,0,1,3.48,1.76,13.39,13.39,0,0,1,1.37,2.59c0.63,1.57,4,15.8,5.89,19.16,1.1,2,4.39,7.16,4.39,7.16a2.3,2.3,0,0,1,.31,1.15V208s-3.11-1.08-3.11-3.91v-6.53c-1.91.27-6-1.65-8.33-2.88a12.82,12.82,0,0,1-6.36-6.76,12.33,12.33,0,0,1-.11-9.16,7.13,7.13,0,0,0,.79-2.91c-0.06-1.14-1.39-2.72-2.18-4.05Z" fill="#fff"/>
     </g>
   </g>
 
@@ -118,5 +166,5 @@
   <g id="floor">
     <line x1="46.24" y1="329" x2="303.76" y2="329" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
   </g>
-  <circle cx="108" cy="165" r="3" fill="#000000" />
+  <circle cx="282" cy="185" r="3" fill="#000000" />
 </svg>
