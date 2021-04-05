@@ -47,14 +47,53 @@
       fill="freeze"
     />
     <g id="flowers" style="transform-origin: 178px 289px;" transform="rotate(50)">
+
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        calcMode="spline"
+        values="50; 20; -10; -3.5; 3; 0.5; -2; -1; 0"
+        keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1"
+        keySplines="0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0;
+                    0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0;
+                    0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0;
+                    0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0;"
+        begin="500ms"
+        dur="1450ms"
+        fill="freeze"
+      />
       <g id="flower-large">
         <path d="M180.73,277.8s8.3-74.59,39.71-90" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-        <path id="flower-large-bud" style="transform-origin: 218px 189px;" transform="rotate(30)" d="M217.95,187.12l9.27-24.49a22,22,0,0,1,8.72,3,7.87,7.87,0,0,1,9.72,12.33,22.14,22.14,0,0,1,.86,9.18l-26,3.3a2.45,2.45,0,0,1-2.6-3.29" fill="#3b7bf2"/>
+        <path id="flower-large-bud" style="transform-origin: 218px 189px;" transform="rotate(30)" d="M217.95,187.12l9.27-24.49a22,22,0,0,1,8.72,3,7.87,7.87,0,0,1,9.72,12.33,22.14,22.14,0,0,1,.86,9.18l-26,3.3a2.45,2.45,0,0,1-2.6-3.29" fill="#3b7bf2">
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="30"
+            to="0"
+            begin="500ms"
+            dur="300ms"
+            fill="freeze"
+          />
+        </path>
       </g>
 
       <g id="flower-small">
         <path d="M178.24,287.63s6.89-44.68,37.95-56.53" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-        <path id="flower-small-bud" style="transform-origin: 211px 233px;" transform="rotate(30)" d="M210.85,232l9-16.47a16.66,16.66,0,0,1,6.13,2.93,5.93,5.93,0,0,1,4-.42,5.67,5.67,0,0,1,4.26,6.85,5.54,5.54,0,0,1-2.29,3.23,15.1,15.1,0,0,1-.21,6.58l-19.34-.11a1.76,1.76,0,0,1-1.6-2.58" fill="#3b7bf2"/>
+        <path id="flower-small-bud" style="transform-origin: 211px 233px;" transform="rotate(30)" d="M210.85,232l9-16.47a16.66,16.66,0,0,1,6.13,2.93,5.93,5.93,0,0,1,4-.42,5.67,5.67,0,0,1,4.26,6.85,5.54,5.54,0,0,1-2.29,3.23,15.1,15.1,0,0,1-.21,6.58l-19.34-.11a1.76,1.76,0,0,1-1.6-2.58" fill="#3b7bf2">
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="30"
+            to="0"
+            begin="500ms"
+            dur="300ms"
+            fill="freeze"
+          />
+        </path>
       </g>
 
     </g>
@@ -165,7 +204,7 @@
         attributeName="transform"
         type="translate"
         calcMode="spline"
-        values="-50 70; 0 0"
+        values="-50 70; 15 0"
         keyTimes="0; 1"
         keySplines="0.25 0.1 0.25 1.0"
         begin="500ms"
@@ -175,7 +214,7 @@
       <animateTransform
         attributeName="transform"
         type="translate"
-        values="0 0; 0 0; -10 10; -10 10; 0 0"
+        values="15 0; 15 0; 5 10; 5 10; 15 0"
         keyTimes="0; 0.18; 0.5; 0.68; 1"
         keySplines="1 0 0.68 1;
                     1 0 0.68 1;
