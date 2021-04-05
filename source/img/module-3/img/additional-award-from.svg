@@ -75,6 +75,36 @@
     </g>
 
     <g id="leaves-left" style="transform-origin: 178px 289px;" transform="rotate(64)">
+      <animateTransform
+        id="leavesLeftUp"
+        attributeName="transform"
+        type="rotate"
+        calcMode="spline"
+        values="64; 29; -8; -3; 1.5"
+        keyTimes="0; 0.25; 0.5; 0.75; 1"
+        keySplines="0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0;
+                    0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0;"
+        begin="500ms"
+        dur="800ms"
+        fill="freeze"
+      />
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        calcMode="spline"
+        values="1.5; 0; -1.5; 0; 1.5"
+        keyTimes="0; 0.25; 0.5; 0.75; 1"
+        keySplines="0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0;
+                    0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0"
+        begin="leavesLeftUp.end"
+        dur="800ms"
+        fill="freeze"
+        repeatCount="indefinite"
+      />
       <path d="M141.77,204.16c24.1,32.45,35.81,84,35.81,84" fill="none" stroke="#3b7bf2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
       <path d="M125.73,196.22c6.54,7.51,17.16,9,17.16,9s0-10.72-6.53-18.22-17.17-9-17.17-9,0,10.72,6.54,18.22" fill="#76abff"/>
       <path d="M153.17,206.54c-2.69,9.58,1.91,19.27,1.91,19.27s9-5.86,11.67-15.45-1.91-19.27-1.91-19.27-9,5.86-11.67,15.45" fill="#3b7bf2"/>
@@ -83,6 +113,46 @@
       <path d="M147.22,252.35c9.36,3.4,19.35-.47,19.35-0.47s-5.18-9.39-14.54-12.79-19.35.47-19.35,0.47,5.18,9.39,14.54,12.79" fill="#1553b7"/>
     </g>
     <g id="leaves-right" style="transform-origin: 178px 289px;" transform="translate(0, 2) rotate(38)">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="0 2"
+        to="0 0"
+        begin="500ms"
+        dur="1000ms"
+        fill="freeze"
+      />
+      <animateTransform
+        id="leavesRightUp"
+        attributeName="transform"
+        type="rotate"
+        calcMode="spline"
+        values="38; 12; -14; -5; 4"
+        keyTimes="0; 0.25; 0.5; 0.75; 1"
+        keySplines="0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0;
+                    0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0;"
+        begin="500ms"
+        dur="1000ms"
+        fill="freeze"
+        additive="sum"
+      />
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        calcMode="spline"
+        values="4; 2; 0; 2; 4"
+        keyTimes="0; 0.25; 0.5; 0.75; 1"
+        keySplines="0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0;
+                    0.42 0  1.0   1.0;
+                    0    0, 0.58, 1.0"
+        begin="leavesRightUp.end"
+        dur="800ms"
+        fill="freeze"
+        repeatCount="indefinite"
+      />
       <path d="M183.79,264.77c2.3,9.1-2.27,18.12-2.27,18.12s-8.32-5.74-10.63-14.85,2.27-18.12,2.27-18.12,8.32,5.75,10.63,14.85" fill="#3b7bf2"/>
       <path d="M199.63,285.16c-9.11,2.31-18.12-2.27-18.12-2.27s5.74-8.32,14.85-10.63,18.12,2.27,18.12,2.27-5.75,8.32-14.85,10.63" fill="#3b7bf2"/>
       <path d="M188.56,271.67a144.15,144.15,0,0,0-10.31,16.61" fill="none" stroke="#3b7bf2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -90,7 +160,6 @@
     </g>
 
     <g id="bird" style="transform-origin: 282px 185px;" transform="translate(-50 70) rotate(-35)">
-    <!-- <g id="bird" style="transform-origin: 282px 185px;"> -->
       <animateTransform
         id="getOut"
         attributeName="transform"
