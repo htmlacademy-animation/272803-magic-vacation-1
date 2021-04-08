@@ -95,10 +95,44 @@
           />
         </path>
       </g>
-
     </g>
     <g id="balloon">
       <g id="balloon-round" style="transform-origin: 108px 165px;" transform="translate(0 158) rotate(46)">
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          calcMode="spline"
+          values="0 158; 0 0; 8 20; -8 -10; -4 5; 2 -5; 1 3; 0 0"
+          keyTimes="0; 0.316; 0.447; 0.632; 0.737; 0.895; 0.947; 1"
+          keySplines="0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0"
+          begin="500ms"
+          dur="1900ms"
+          fill="freeze"
+        />
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          calcMode="spline"
+          values="46; -14; 5; -6; 3; 0; 0"
+          keyTimes="0; 0.368; 0.5; 0.737; 0.9; 0.95; 1"
+          keySplines="0 0 1 1;
+                      0 0 1 1;
+                      0 0 1 1;
+                      0 0 1 1;
+                      0 0 1 1;
+                      0 0 1 1"
+          begin="500ms"
+          dur="1900ms"
+          fill="freeze"
+          additive="sum"
+        />
+
         <path d="M106.58,161.87l-2.19,3.79a1.34,1.34,0,0,0,1.17,2h4.37a1.34,1.34,0,0,0,1.16-2l-2.18-3.79a1.35,1.35,0,0,0-2.33,0" fill="#fff"/>
         <path d="M107.74,79.42a32.91,32.91,0,0,1,32.9,32.89c0,18.17-15.09,48.89-33.25,48.89s-32.55-30.73-32.55-48.89a32.91,32.91,0,0,1,32.9-32.89m0-1.61a34.54,34.54,0,0,0-34.5,34.5c0,9.51,3.8,22.1,9.68,32.07,7,11.88,15.68,18.42,24.46,18.42s17.6-6.54,24.81-18.4c6.1-10,10.05-22.64,10.05-32.09a34.54,34.54,0,0,0-34.5-34.5" fill="#fff"/>
         <path d="M96.06,112.39c0-18.16,5.23-32.89,11.68-32.89a32.91,32.91,0,0,0-32.9,32.89c0,18.17,14.38,48.89,32.55,48.89h0.17c-6.43-.19-11.5-30.77-11.5-48.89" fill="#76abff"/>
@@ -109,8 +143,40 @@
         <path d="M116.21,116.88a5.7,5.7,0,1,0,5.7,5.7,5.4,5.4,0,0,0-5.7-5.7m0,8c-1.86,0-3.06-.93-3.06-2.29s1.21-2.29,3.06-2.29,3.07,0.9,3.07,2.29-1.21,2.29-3.07,2.29" fill="#fff"/>
       </g>
       <!-- <line id="balloon-rope" x1="107.65" y1="166.71" x2="107.65" y2="289.02" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/> -->
-      <line id="balloon-rope" x1="107.65" y1="289.02" x2="107.65" y2="289.02" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-
+      <line id="balloon-rope" x1="107.65" y1="324.71" x2="107.65" y2="289.02" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
+        <animate
+          attributeName="x1"
+          calcMode="spline"
+          values="107.65; 107.65; 115.65; 99.65; 103.65; 109.65; 108.65; 107.65"
+          keyTimes="0; 0.316; 0.447; 0.632; 0.737; 0.895; 0.947; 1"
+          keySplines="0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0"
+          begin="500ms"
+          dur="1900ms"
+          fill="freeze"
+        />
+        <animate
+          attributeName="y1"
+          calcMode="spline"
+          values="324.71; 165.71; 185.71; 155.71; 170.71; 160.71; 168.71; 165.71"
+          keyTimes="0; 0.316; 0.447; 0.632; 0.737; 0.895; 0.947; 1"
+          keySplines="0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0;
+                      0.42, 0, 0.58, 1.0"
+          begin="500ms"
+          dur="1900ms"
+          fill="freeze"
+        />
+      </line>
     </g>
 
     <g id="leaves-left" style="transform-origin: 178px 289px;" transform="rotate(64)">
@@ -282,7 +348,7 @@
           keyTimes="0; 0.5; 1"
           begin="500ms"
           dur="150ms"
-          additive="sum"v
+          additive="sum"
           fill="freeze"
           repeatCount="indefinite"
         />
@@ -310,9 +376,7 @@
     <path d="M100,301.54H79.22a1,1,0,0,1-1-1V298a1,1,0,0,1,1-1H100a1,1,0,0,1,1,1v2.58A1,1,0,0,1,100,301.54Z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
   </g>
 
-
   <g id="floor">
     <line x1="46.24" y1="329" x2="303.76" y2="329" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
   </g>
-  <circle cx="282" cy="185" r="3" fill="#000000" />
 </svg>
