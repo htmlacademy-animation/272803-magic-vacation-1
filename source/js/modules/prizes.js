@@ -1,7 +1,7 @@
 const animationsData = [
   {path: `img/module-3/img/primary-award-from.svg`, duration: 6250},
   {path: `img/module-3/img/secondary-award-from.svg`, duration: 2017},
-  {path: `img/prize3.svg`, duration: 0},
+  {path: `img/module-3/img/additional-award-from.svg`, duration: 2400},
 ];
 
 class PrizesAnimationsManager {
