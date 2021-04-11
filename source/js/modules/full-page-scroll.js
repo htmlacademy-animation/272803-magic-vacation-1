@@ -7,6 +7,7 @@ export default class FullPageScroll {
     this.THROTTLE_TIMEOUT = 2000;
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
+    this.resultElements = document.querySelectorAll(`.screen.screen--result`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
     this.curtain = document.querySelector(`.curtain`);
 
@@ -75,6 +76,22 @@ export default class FullPageScroll {
         await introDateTypo.animate();
       } else if (currentScreen.classList.contains(`screen--prizes`)) {
         await this.prizesAnimationsManager.animate();
+      } else if (currentScreen.classList.contains(`screen--game`)) {
+        for (let i = 0; i < this.resultElements.length; i++) {
+          this.resultElements[i].classList.remove(`screen--hidden`);
+          this.resultElements[i].classList.add(`screen--show`);
+
+          await new Promise(resolve => {
+            setTimeout(resolve, 5000);
+          });
+
+          this.resultElements[i].classList.add(`screen--hidden`);
+          this.resultElements[i].classList.remove(`screen--show`);
+
+          if (i >= this.resultElements.length - 1) {
+            i = 0;
+          }
+        }
       }
     }, 0);
 
