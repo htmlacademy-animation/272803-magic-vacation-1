@@ -23,7 +23,7 @@ export default () => {
         const svg = targetEl[0].querySelector(`svg`);
         const letters = [...svg.querySelectorAll(`g`)];
 
-        animateLetterGroup(letters[0], root);
+        animateLetterGroup(letters[0], i, root);
       });
     }
 
@@ -41,10 +41,7 @@ export default () => {
   }
 };
 
-const animateLetter = (letter, index, root) => {
-  const length = letter.getTotalLength();
-  root.style.setProperty(`--length-${index}`, `${length}px`);
-
+const animateLetter = (letter) => {
   return new Promise((resolve) => {
     const transitionendHandler = () => {
       letter.removeEventListener(`transitionend`, transitionendHandler);
@@ -59,10 +56,12 @@ const animateLetter = (letter, index, root) => {
   });
 };
 
-const animateLetterGroup = (letterGroup, root) => {
+const animateLetterGroup = (letterGroup, index, root) => {
   const letters = [...letterGroup.querySelectorAll(`path`)];
+  const length = letters[0].getTotalLength();
+  root.style.setProperty(`--length-${index}`, `${length}px`);
 
-  const promises = letters.map((letter, index) => animateLetter(letter, index, root));
+  const promises = letters.map(animateLetter);
 
   return Promise.all(promises);
 };
