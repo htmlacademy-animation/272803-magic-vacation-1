@@ -1,19 +1,29 @@
 export default () => {
-  let showResultEls = document.querySelectorAll(`.js-show-result`);
-  let results = document.querySelectorAll(`.screen--result`);
+  const root = document.querySelector(`:root`);
+  const showResultEls = document.querySelectorAll(`.js-show-result`);
+  const results = document.querySelectorAll(`.screen--result`);
+
   if (results.length) {
     for (let i = 0; i < showResultEls.length; i++) {
       showResultEls[i].addEventListener(`click`, function () {
-        let target = showResultEls[i].getAttribute(`data-target`);
+        const target = showResultEls[i].getAttribute(`data-target`);
+
         [].slice.call(results).forEach(function (el) {
           el.classList.remove(`screen--show`);
           el.classList.add(`screen--hidden`);
         });
-        let targetEl = [].slice.call(results).filter(function (el) {
+
+        const targetEl = [].slice.call(results).filter(function (el) {
           return el.getAttribute(`id`) === target;
         });
+
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
+
+        const svg = targetEl[0].querySelector(`svg`);
+        const letters = [...svg.querySelectorAll(`g`)];
+
+        animateLetterGroup(letters[0], root);
       });
     }
 
@@ -29,4 +39,30 @@ export default () => {
       });
     }
   }
+};
+
+const animateLetter = (letter, index, root) => {
+  const length = letter.getTotalLength();
+  root.style.setProperty(`--length-${index}`, `${length}px`);
+
+  return new Promise((resolve) => {
+    const transitionendHandler = () => {
+      letter.removeEventListener(`transitionend`, transitionendHandler);
+      resolve();
+    };
+
+    letter.addEventListener(`transitionend`, transitionendHandler);
+
+    setTimeout(() => {
+      letter.classList.add(`animated`);
+    }, 1000);
+  });
+};
+
+const animateLetterGroup = (letterGroup, root) => {
+  const letters = [...letterGroup.querySelectorAll(`path`)];
+
+  const promises = letters.map((letter, index) => animateLetter(letter, index, root));
+
+  return Promise.all(promises);
 };

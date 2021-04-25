@@ -20,6 +20,6 @@ class SvgAnimation {
   static getRandomPath(path) {
     return `${path}?${Math.floor(Math.random() * MAX_VALUE)}`;
   }
-};
+}
 
 export default SvgAnimation;

@@ -268,3 +268,46 @@
     }
   }
 }
+
+:root {
+  --length-0: 0px; // 447.92px
+  --length-1: 0px;
+  --length-2: 0px;
+  --length-3: 0px;
+  --length-4: 0px;
+  --length-5: 0px;
+}
+
+.first.animated {
+  transition: stroke-dashoffset 500ms linear 0ms, stroke-dasharray 500ms linear 0ms;
+}
+
+.first-0 {
+  stroke-dasharray: 0 var(--length-0);
+  stroke-dashoffset: -10px;
+
+  &.animated {
+    stroke-dasharray: var(--length-0) 0;
+    stroke-dashoffset: calc(var(--length-0) - 10px)
+  }
+}
+
+.first-1 {
+  stroke-dasharray: 0 var(--length-0);
+  stroke-dashoffset: 45px;
+
+  &.animated {
+    stroke-dasharray: var(--length-0) 0;
+    stroke-dashoffset:  calc(var(--length-0) + 45px)
+  }
+}
+
+.first-2 {
+  stroke-dasharray: 0 var(--length-0);
+  stroke-dashoffset: 245px;
+
+  &.animated {
+    stroke-dasharray: var(--length-0) 0;
+    stroke-dashoffset: calc(var(--length-0) + 245px)
+  }
+}
