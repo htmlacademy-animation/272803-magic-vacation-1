@@ -4,7 +4,7 @@ const ResultType = {
 };
 
 const LettersOffsetsData = {
-  [ResultType.WIN]: [-50, -60, 15, -50, -50, -50],
+  [ResultType.WIN]: [-50, -60, 15, 65, 10, 40, 145],
   [ResultType.LOSS]: [-50, -50, -50, -50, -50]
 };
 
@@ -17,7 +17,8 @@ class ResultAnimationManager {
   }
 
   _prepareData() {
-    this.svg = this.resultScreen.querySelector(`svg`);
+    this.title = this.resultScreen.querySelector(`.result__title`);
+    this.svg = this.title.querySelector(`svg`);
     this.letters = [...this.svg.querySelectorAll(`path`)];
 
     this.letters.forEach(this._prepareLetter.bind(this));
@@ -33,21 +34,31 @@ class ResultAnimationManager {
 
   animateLetter(letter) {
     return new Promise((resolve) => {
-      const transitionendHandler = () => {
+      const transitionendHandler = (evt) => {
+        if (evt.target !== letter) {
+          return;
+        }
+
         letter.removeEventListener(`transitionend`, transitionendHandler);
         resolve();
       };
 
       letter.addEventListener(`transitionend`, transitionendHandler);
-
-      setTimeout(() => {
-        letter.classList.add(`animated`);
-      }, 1000);
     });
   }
 
   animate() {
-    this.letters.slice(0, 3).forEach(this.animateLetter.bind(this));
+    // if (this.result === ResultType.WIN) {
+    //   const promises = this.letters.map(this.animateLetter.bind(this));
+
+    //   return Promise.all(promises);
+    // }
+
+    this.title.classList.add(`animated`);
+
+    const promises = this.letters.map(this.animateLetter.bind(this));
+
+    return Promise.all(promises);
   }
 }
 

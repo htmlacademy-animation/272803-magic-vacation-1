@@ -21,30 +21,52 @@
     padding: 3rem 0;
   }
 
-  svg {
-    --points-amount: 3;
+  .result__title {
+    svg {
+      --points-amount: 3;
 
+      path {
+        --length: 0px;
+        --stroke-dashoffset: 0px;
 
-    path {
-      --length: 0px;
-      --stroke-dashoffset: 0px;
+        stroke-dasharray: 0 calc(var(--length) / var(--points-amount));
+        stroke-dashoffset: var(--stroke-dashoffset);
+      }
+    }
 
-      // stroke-dasharray: 0 var(--length);
-      // stroke-dashoffset: var(--stroke-dashoffset);
-      stroke-dasharray: 0 calc(var(--length) / var(--points-amount));
-      stroke-dashoffset: var(--stroke-dashoffset);
-
-      &.animated {
-        // stroke-dasharray: var(--length) 0;
-        // stroke-dashoffset: calc(var(--length) + var(--stroke-dashoffset));
+    &.animated {
+      path {
         stroke-dasharray: calc(var(--length) / var(--points-amount)) 0;
         stroke-dashoffset: calc(calc(var(--length) / var(--points-amount)) + var(--stroke-dashoffset));
-
-        transition: stroke-dashoffset 5000ms linear 0ms,
-          stroke-dasharray 5000ms linear 0ms;
       }
     }
   }
+
+
+
+  &--trip,
+  &--prize {
+    .result__title {
+      transition: transform 500ms ease-out 0ms;
+      transform: scale(1.1);
+
+      &.animated {
+        transform: scale(1);
+
+        path {
+          transition: stroke-dashoffset 500ms linear 0ms,
+            stroke-dasharray 500ms linear 0ms;
+        }
+      }
+    }
+
+  }
+
+  // &--negative {
+  //   svg path.animated {
+
+  //   }
+  // }
 }
 
 .result__image {
