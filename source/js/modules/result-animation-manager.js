@@ -48,17 +48,15 @@ class ResultAnimationManager {
   }
 
   animate() {
-    // if (this.result === ResultType.WIN) {
-    //   const promises = this.letters.map(this.animateLetter.bind(this));
-
-    //   return Promise.all(promises);
-    // }
-
     this.title.classList.add(`animated`);
 
     const promises = this.letters.map(this.animateLetter.bind(this));
 
     return Promise.all(promises);
+  }
+
+  reset() {
+    this.title.classList.remove(`animated`);
   }
 }
 
