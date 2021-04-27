@@ -1,7 +1,13 @@
+import ResultAnimationManager from './result-animation-manager.js';
+
 export default () => {
-  const root = document.querySelector(`:root`);
   const showResultEls = document.querySelectorAll(`.js-show-result`);
   const results = document.querySelectorAll(`.screen--result`);
+  const resultAnimationManagers = [...results].slice(0, 1).map((resultScreen) => {
+    const manager = new ResultAnimationManager({resultScreen});
+
+    return manager;
+  });
 
   if (results.length) {
     for (let i = 0; i < showResultEls.length; i++) {
@@ -20,14 +26,12 @@ export default () => {
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
 
-        const svg = targetEl[0].querySelector(`svg`);
-        const letters = [...svg.querySelectorAll(`g`)];
-
-        animateLetterGroup(letters[0], i, root);
+        resultAnimationManagers[0].animate();
       });
     }
 
     let playBtn = document.querySelector(`.js-play`);
+
     if (playBtn) {
       playBtn.addEventListener(`click`, function () {
         [].slice.call(results).forEach(function (el) {
@@ -41,27 +45,3 @@ export default () => {
   }
 };
 
-const animateLetter = (letter) => {
-  return new Promise((resolve) => {
-    const transitionendHandler = () => {
-      letter.removeEventListener(`transitionend`, transitionendHandler);
-      resolve();
-    };
-
-    letter.addEventListener(`transitionend`, transitionendHandler);
-
-    setTimeout(() => {
-      letter.classList.add(`animated`);
-    }, 1000);
-  });
-};
-
-const animateLetterGroup = (letterGroup, index, root) => {
-  const letters = [...letterGroup.querySelectorAll(`path`)];
-  const length = letters[0].getTotalLength();
-  root.style.setProperty(`--length-${index}`, `${length}px`);
-
-  const promises = letters.map(animateLetter);
-
-  return Promise.all(promises);
-};
