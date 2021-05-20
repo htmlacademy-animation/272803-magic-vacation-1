@@ -38,6 +38,9 @@ class ResultAnimationManager {
       const value = length / this.ANIMATION_POINTS_AMOUNT;
       letter.dataset.length = length;
 
+      letter.setAttribute(`stroke-dasharray`, `0 ${value}`);
+      letter.setAttribute(`stroke-dashoffset`, `0`);
+
       strokeDasharrayAnimation.setAttribute(`from`, `0 ${value}`);
       strokeDashoffsetAnimation.setAttribute(`from`, `0`);
 
