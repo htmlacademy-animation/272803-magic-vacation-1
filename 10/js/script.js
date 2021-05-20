@@ -10654,7 +10654,7 @@ class ResultAnimationManager {
     this.title.classList.add(`animated`);
   }
 
-  async _animateWrong() {
+  _animateWrong() {
     const animationElement = this.svg.querySelector(`#negativeAnimation0`);
     animationElement.beginElement();
   }

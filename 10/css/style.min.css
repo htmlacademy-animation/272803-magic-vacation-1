@@ -2434,19 +2434,19 @@ img {
       width: 35rem; } }
 
 .result--negative .result__title {
-  margin-top: 0;
+  margin-top: -7.5rem;
   width: 66.5rem;
   height: 22.6rem; }
   @media (min-width: 2000px) {
     .result--negative .result__title {
       margin-top: 95px;
       width: 665px;
-      height: 113px; } }
+      height: 226px; } }
   @media (orientation: portrait) {
     .result--negative .result__title {
-      margin-top: 0;
+      margin-top: -4.5rem;
       width: 28.8rem;
-      height: 4.9rem; } }
+      height: 9.8rem; } }
   @media (max-width: 1024px) and (orientation: landscape) {
     .result--negative .result__title {
       margin-top: 0;
