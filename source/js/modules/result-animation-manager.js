@@ -3,15 +3,14 @@ const ResultType = {
   LOSS: `loss`,
 };
 
-const LettersOffsetsData = {
-  [ResultType.WIN]: [-50, -60, 15, 65, 10, 40, 145],
-  [ResultType.LOSS]: [-50, -50, -50, -50, -50]
-};
+const ANIMATION_POINTS_AMOUNT = 3;
 
 class ResultAnimationManager {
   constructor(options) {
     this.resultScreen = options.resultScreen;
     this.result = this.resultScreen.dataset.result;
+
+    this.ANIMATION_POINTS_AMOUNT = ANIMATION_POINTS_AMOUNT;
 
     this._prepareData();
   }
@@ -21,42 +20,47 @@ class ResultAnimationManager {
     this.svg = this.title.querySelector(`svg`);
     this.letters = [...this.svg.querySelectorAll(`path`)];
 
+    this.svg.style.setProperty(`--points-amount`, this.ANIMATION_POINTS_AMOUNT);
     this.letters.forEach(this._prepareLetter.bind(this));
   }
 
-  _prepareLetter(letter, letterIndex) {
-    const offsets = LettersOffsetsData[this.result];
+  _prepareLetter(letter) {
     const length = letter.getTotalLength();
 
-    letter.style.setProperty(`--length`, `${length}px`);
-    letter.style.setProperty(`--stroke-dashoffset`, `${offsets[letterIndex]}px`);
-  }
+    // Изначально делал все анимации stroke-dasharray с помощью css, но при анимировании неверного ответа
+    // возникли проблемы (анимация stroke-dasharray прерывалась до окончания анимации transform), и пришлось переделать на smil.
+    // Для верного ответа оставил css анимацию. Как минимум, в учебных целях попробовал оба кейса.
+    if (this.result === ResultType.WIN) {
+      letter.style.setProperty(`--length`, `${length}px`);
+    } else {
+      const [strokeDasharrayAnimation, strokeDashoffsetAnimation] = [...letter.querySelectorAll(`animate`)];
 
-  animateLetter(letter) {
-    return new Promise((resolve) => {
-      const transitionendHandler = (evt) => {
-        if (evt.target !== letter) {
-          return;
-        }
+      const value = length / this.ANIMATION_POINTS_AMOUNT;
+      letter.dataset.length = length;
 
-        letter.removeEventListener(`transitionend`, transitionendHandler);
-        resolve();
-      };
+      strokeDasharrayAnimation.setAttribute(`from`, `0 ${value}`);
+      strokeDashoffsetAnimation.setAttribute(`from`, `0`);
 
-      letter.addEventListener(`transitionend`, transitionendHandler);
-    });
+      strokeDasharrayAnimation.setAttribute(`to`, `${value} 0`);
+      strokeDashoffsetAnimation.setAttribute(`to`, `${value}`);
+    }
   }
 
   animate() {
-    this.title.classList.add(`animated`);
-
-    const promises = this.letters.map(this.animateLetter.bind(this));
-
-    return Promise.all(promises);
+    if (this.result === ResultType.LOSS) {
+      this._animateWrong();
+    } else if (this.result === ResultType.WIN) {
+      this._animateSuccess();
+    }
   }
 
-  reset() {
-    this.title.classList.remove(`animated`);
+  _animateSuccess() {
+    this.title.classList.add(`animated`);
+  }
+
+  async _animateWrong() {
+    const animationElement = this.svg.querySelector(`#negativeAnimation0`);
+    animationElement.beginElement();
   }
 }
 

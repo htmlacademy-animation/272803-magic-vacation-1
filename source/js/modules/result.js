@@ -3,7 +3,7 @@ import ResultAnimationManager from './result-animation-manager.js';
 export default () => {
   const showResultEls = document.querySelectorAll(`.js-show-result`);
   const results = document.querySelectorAll(`.screen--result`);
-  const resultAnimationManagers = [...results].slice(0, 3).map((resultScreen) => {
+  const resultAnimationManagers = [...results].map((resultScreen) => {
     const manager = new ResultAnimationManager({resultScreen});
 
     return manager;
@@ -26,7 +26,7 @@ export default () => {
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
 
-        targetEl[0].getBoundingClientRect();
+        targetEl[0].getBoundingClientRect(); // reflow
 
         resultAnimationManagers[i].animate();
       });
