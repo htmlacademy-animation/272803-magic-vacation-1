@@ -1,4 +1,4 @@
-const ResultType = {
+export const ResultType = {
   WIN: `win`,
   LOSS: `loss`,
 };

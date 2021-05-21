@@ -1,13 +1,14 @@
-import ResultAnimationManager from './result-animation-manager.js';
+// import ResultAnimationManager from './result-animation-manager.js';
+import game from './game';
 
 export default () => {
   const showResultEls = document.querySelectorAll(`.js-show-result`);
   const results = document.querySelectorAll(`.screen--result`);
-  const resultAnimationManagers = [...results].map((resultScreen) => {
-    const manager = new ResultAnimationManager({resultScreen});
+  // const resultAnimationManagers = [...results].map((resultScreen) => {
+  //   const manager = new ResultAnimationManager({resultScreen});
 
-    return manager;
-  });
+  //   return manager;
+  // });
 
   if (results.length) {
     for (let i = 0; i < showResultEls.length; i++) {
@@ -26,9 +27,7 @@ export default () => {
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
 
-        targetEl[0].getBoundingClientRect(); // reflow
-
-        resultAnimationManagers[i].animate();
+        // resultAnimationManagers[i].animate();
       });
     }
 
@@ -42,6 +41,8 @@ export default () => {
         });
         document.getElementById(`messages`).innerHTML = ``;
         document.getElementById(`message-field`).focus();
+
+        game.start();
       });
     }
   }

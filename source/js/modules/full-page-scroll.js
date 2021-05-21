@@ -1,6 +1,7 @@
 import throttle from 'lodash/throttle';
 import {titleTypo as introTitleTypo, dateTypo as introDateTypo} from './intro.js';
 import {PrizesAnimationsManager} from './prizes.js';
+import game from './game.js';
 
 export default class FullPageScroll {
   constructor() {
@@ -16,6 +17,7 @@ export default class FullPageScroll {
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
 
     this.prizesAnimationsManager = new PrizesAnimationsManager();
+    this.game = game;
   }
 
   init() {
@@ -57,6 +59,8 @@ export default class FullPageScroll {
       } else if (screen.classList.contains(`active`) && screen.classList.contains(`screen--intro`)) {
         introTitleTypo.reset();
         introDateTypo.reset();
+      } else if (screen.classList.contains(`active`) && screen.classList.contains(`screen--game`)) {
+        this.game.stop();
       }
 
       screen.classList.add(`screen--hidden`);
@@ -76,6 +80,8 @@ export default class FullPageScroll {
         await introDateTypo.animate();
       } else if (currentScreen.classList.contains(`screen--prizes`)) {
         await this.prizesAnimationsManager.animate();
+      } else if (currentScreen.classList.contains(`screen--game`)) {
+        this.game.start();
       }
     }, 0);
 
