@@ -2,7 +2,7 @@ import {MILLISECONDS_PER_MINUTE} from './timer.js';
 import Timer from './timer.js';
 import ResultAnimationManager, {ResultType} from './result-animation-manager.js';
 
-const GAME_DURATION = 0.1 * MILLISECONDS_PER_MINUTE;
+const GAME_DURATION = 5 * MILLISECONDS_PER_MINUTE;
 
 class Game {
   constructor() {

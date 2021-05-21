@@ -32,7 +32,7 @@ class Timer {
 
   start() {
     this.startTimeStamp = Date.now();
-    this.currentTimestamp = Date.now();
+    this.currentTimestamp = this.startTimeStamp;
 
     this.requestId = requestAnimationFrame(this.tick.bind(this));
   }
@@ -81,9 +81,9 @@ class Timer {
     return this.currentTimestamp - this.startTimeStamp;
   }
 
-  static formatTimestamp(ms) {
-    const minutes = Math.floor(ms / MILLISECONDS_PER_MINUTE);
-    const seconds = Math.floor((ms - (minutes * MILLISECONDS_PER_MINUTE)) / MILLISECONDS_PER_SECONDS);
+  static formatTimestamp(milliseconds) {
+    const minutes = Math.floor(milliseconds / MILLISECONDS_PER_MINUTE);
+    const seconds = Math.floor((milliseconds - (minutes * MILLISECONDS_PER_MINUTE)) / MILLISECONDS_PER_SECONDS);
 
     return {minutes, seconds};
   }
