@@ -20,6 +20,56 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     padding: 3rem 0;
   }
+
+  .result__title {
+    svg {
+      --points-amount: 1;
+    }
+  }
+
+
+
+  &--trip,
+  &--prize {
+    .result__title {
+      transition: transform 500ms ease-out 0ms;
+      transform: scale(1.1);
+
+      svg {
+        path {
+          --length: 0px;
+          --stroke-dashoffset: 0px;
+
+          stroke-dasharray: 0 calc(var(--length) / var(--points-amount));
+          stroke-dashoffset: var(--stroke-dashoffset);
+        }
+      }
+
+      &.animated {
+        path {
+          stroke-dasharray: calc(var(--length) / var(--points-amount)) 0;
+          stroke-dashoffset: calc(calc(var(--length) / var(--points-amount)) + var(--stroke-dashoffset));
+        }
+      }
+
+      &.animated {
+        transform: scale(1);
+
+        path {
+          transition: stroke-dashoffset 500ms linear 0ms,
+            stroke-dasharray 500ms linear 0ms;
+        }
+      }
+    }
+
+  }
+
+  // &--negative {
+  //   .result__title {
+  //     &.animated {
+  //     }
+  //   }
+  // }
 }
 
 .result__image {
@@ -72,6 +122,10 @@
     height: 100%;
     stroke-width: 0.2rem;
     stroke-linejoin: round;
+
+    path {
+      will-change: stroke-dasharray, stroke-dashoffset, transform;
+    }
   }
 }
 
@@ -242,20 +296,25 @@
 
 .result--negative {
   .result__title {
-    margin-top: 9.5rem;
+    // margin-top: 9.5rem;
+    margin-top: -7.5rem;
     width: 66.5rem;
-    height: 11.3rem;
+    // height: 11.3rem;
+    height: 22.6rem;
 
     @media (min-width: $stop-scaling) {
       margin-top: 95px;
       width: 665px;
-      height: 113px;
+      // height: 113px;
+      height: 226px;
     }
 
     @media (orientation: portrait) {
-      margin-top: 0;
+      // margin-top: 0;
+      margin-top: -4.5rem;
       width: 28.8rem;
-      height: 4.9rem;
+      // height: 4.9rem;
+      height: 9.8rem;
     }
 
     @media (max-width: $tablet) and (orientation: landscape) {

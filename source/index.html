@@ -665,7 +665,11 @@
         </div>
       </section>
 
-      <section class="screen screen--hidden screen--result" id="result">
+      <section
+        class="screen screen--hidden screen--result"
+        id="result"
+        data-result="win"
+      >
         <div class="screen__wrapper">
           <div class="result result--trip">
             <div class="result__image">
@@ -770,7 +774,11 @@
         </div>
       </section>
 
-      <section class="screen screen--hidden screen--result" id="result2">
+      <section
+        class="screen screen--hidden screen--result"
+        id="result2"
+        data-result="win"
+      >
         <div class="screen__wrapper">
           <div class="result result--prize">
             <div class="result__image">
@@ -875,7 +883,11 @@
         </div>
       </section>
 
-      <section class="screen screen--hidden screen--result" id="result3">
+      <section
+        class="screen screen--hidden screen--result"
+        id="result3"
+        data-result="loss"
+      >
         <div class="screen__wrapper">
           <div class="result result--negative">
             <div class="result__image">
@@ -895,62 +907,333 @@
               <span class="visually-hidden">Не угадал!</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 660.77 109.24"
+                viewBox="0 0 660.77 218.48"
               >
                 <path
                   d="M2.66,92V8H16.1V42.2H53.3V8H66.74V92H53.3V58.64H16.1V92H2.66Z"
                   transform="translate(-2.16 -1.5)"
                   fill="none"
                   stroke="currentColor"
-                />
+                >
+                  <animate
+                    id="shapeAnimation0"
+                    attributeName="stroke-dasharray"
+                    begin="negativeAnimation0.begin"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animate
+                    id="shapeOffsetAnimation0"
+                    attributeName="stroke-dashoffset"
+                    begin="shapeAnimation0.begin"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animateTransform
+                    id="negativeAnimation0"
+                    attributeName="transform"
+                    type="translate"
+                    calcMode="spline"
+                    values="0 0; 0 110; 0 100; 0 110"
+                    keyTimes="0; 0.7; 0.85; 1"
+                    keySplines="0.42, 0, 1.0,  1.0;
+                                0,    0, 0.58, 1.0;
+                                0.42, 0, 1.0,  1.0"
+                    begin="indefinite"
+                    dur="1000ms"
+                    fill="freeze"
+                    additive="sum"
+                  />
+                </path>
+
                 <path
                   d="M147.62,8V24.44H97V41.6h33.6V58H97V75.56h50.64V92H83.54V8h64.08Z"
                   transform="translate(-2.16 -1.5)"
                   fill="none"
                   stroke="currentColor"
-                />
+                >
+                  <animate
+                    id="shapeAnimation1"
+                    attributeName="stroke-dasharray"
+                    begin="shapeAnimation0.begin+60ms"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animate
+                    id="shapeOffsetAnimation1"
+                    attributeName="stroke-dashoffset"
+                    begin="shapeAnimation1.begin"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animateTransform
+                    id="negativeAnimation1"
+                    attributeName="transform"
+                    type="translate"
+                    calcMode="spline"
+                    values="0 0; 0 110; 0 100; 0 110"
+                    keyTimes="0; 0.7; 0.85; 1"
+                    keySplines="0.42, 0, 1.0,  1.0;
+                                0,    0, 0.58, 1.0;
+                                0.42, 0, 1.0,  1.0"
+                    begin="negativeAnimation0.begin+60ms"
+                    dur="1000ms"
+                    fill="freeze"
+                    additive="sum"
+                  />
+                </path>
                 <path
                   d="M199.22,8l20.52,42.36L235.34,8h16.44l-31,84H204.38l9.48-25.92L185.78,8h13.44Z"
                   transform="translate(-2.16 -1.5)"
                   fill="none"
                   stroke="currentColor"
-                />
+                >
+                  <animate
+                    id="shapeAnimation2"
+                    attributeName="stroke-dasharray"
+                    begin="shapeAnimation1.begin+60ms"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animate
+                    id="shapeOffsetAnimation2"
+                    attributeName="stroke-dashoffset"
+                    begin="shapeAnimation2.begin"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animateTransform
+                    id="negativeAnimation2"
+                    attributeName="transform"
+                    type="translate"
+                    calcMode="spline"
+                    values="0 0; 0 110; 0 100; 0 110"
+                    keyTimes="0; 0.7; 0.85; 1"
+                    keySplines="0.42, 0, 1.0,  1.0;
+                                0,    0, 0.58, 1.0;
+                                0.42, 0, 1.0,  1.0"
+                    begin="negativeAnimation1.begin+60ms"
+                    dur="1000ms"
+                    fill="freeze"
+                    additive="sum"
+                  />
+                </path>
                 <path
                   d="M273.74,24.44V92H260.3V8h50.16V24.44H273.74Z"
                   transform="translate(-2.16 -1.5)"
                   fill="none"
                   stroke="currentColor"
-                />
+                >
+                  <animate
+                    id="shapeAnimation3"
+                    attributeName="stroke-dasharray"
+                    begin="shapeAnimation2.begin+60ms"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animate
+                    id="shapeOffsetAnimation3"
+                    attributeName="stroke-dashoffset"
+                    begin="shapeAnimation3.begin"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animateTransform
+                    id="negativeAnimation3"
+                    attributeName="transform"
+                    type="translate"
+                    calcMode="spline"
+                    values="0 0; 0 110; 0 100; 0 110"
+                    keyTimes="0; 0.7; 0.85; 1"
+                    keySplines="0.42, 0, 1.0,  1.0;
+                                0,    0, 0.58, 1.0;
+                                0.42, 0, 1.0,  1.0"
+                    begin="negativeAnimation2.begin+60ms"
+                    dur="1000ms"
+                    fill="freeze"
+                    additive="sum"
+                  />
+                </path>
                 <path
                   d="M307.1,92l28-84h27.12l28.08,84H376.82L369,68.48h-37.8L323.42,92H307.1Zm56.64-40L350.3,11.84,336.86,52h26.88Z"
                   transform="translate(-2.16 -1.5)"
                   fill="none"
                   stroke="currentColor"
-                />
+                >
+                  <animate
+                    id="shapeAnimation4"
+                    attributeName="stroke-dasharray"
+                    begin="shapeAnimation3.begin+60ms"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animate
+                    id="shapeOffsetAnimation4"
+                    attributeName="stroke-dashoffset"
+                    begin="shapeAnimation4.begin"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animateTransform
+                    id="negativeAnimation4"
+                    attributeName="transform"
+                    type="translate"
+                    calcMode="spline"
+                    values="0 0; 0 110; 0 100; 0 110"
+                    keyTimes="0; 0.7; 0.85; 1"
+                    keySplines="0.42, 0, 1.0,  1.0;
+                                0,    0, 0.58, 1.0;
+                                0.42, 0, 1.0,  1.0"
+                    begin="negativeAnimation3.begin+60ms"
+                    dur="1000ms"
+                    fill="freeze"
+                    additive="sum"
+                  />
+                </path>
                 <path
                   d="M396.38,110.24V75.56h7.44c4.56-4.68,7.8-18.36,8.76-56L412.94,8h48.6V75.56h10v34.68H456.86V92H411v18.24H396.38ZM448.1,75.56V24.44H425.54v3.12c-0.48,22.44-3.24,37.68-7.2,48H448.1Z"
                   transform="translate(-2.16 -1.5)"
                   fill="none"
                   stroke="currentColor"
-                />
+                >
+                  <animate
+                    id="shapeAnimation5"
+                    attributeName="stroke-dasharray"
+                    begin="shapeAnimation4.begin+60ms"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animate
+                    id="shapeOffsetAnimation5"
+                    attributeName="stroke-dashoffset"
+                    begin="shapeAnimation5.begin"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animateTransform
+                    id="negativeAnimation5"
+                    attributeName="transform"
+                    type="translate"
+                    calcMode="spline"
+                    values="0 0; 0 110; 0 100; 0 110"
+                    keyTimes="0; 0.7; 0.85; 1"
+                    keySplines="0.42, 0, 1.0,  1.0;
+                                0,    0, 0.58, 1.0;
+                                0.42, 0, 1.0,  1.0"
+                    begin="negativeAnimation4.begin+60ms"
+                    dur="1000ms"
+                    fill="freeze"
+                    additive="sum"
+                  />
+                </path>
                 <path
                   d="M477.74,92l28-84h27.12L560.9,92H547.46l-7.8-23.52h-37.8L494.06,92H477.74Zm56.64-40-13.44-40.2L507.5,52h26.88Z"
                   transform="translate(-2.16 -1.5)"
                   fill="none"
                   stroke="currentColor"
-                />
+                >
+                  <animate
+                    id="shapeAnimation6"
+                    attributeName="stroke-dasharray"
+                    begin="shapeAnimation5.begin+60ms"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animate
+                    id="shapeOffsetAnimation6"
+                    attributeName="stroke-dashoffset"
+                    begin="shapeAnimation6.begin"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animateTransform
+                    id="negativeAnimation6"
+                    attributeName="transform"
+                    type="translate"
+                    calcMode="spline"
+                    values="0 0; 0 110; 0 100; 0 110"
+                    keyTimes="0; 0.7; 0.85; 1"
+                    keySplines="0.42, 0, 1.0,  1.0;
+                                0,    0, 0.58, 1.0;
+                                0.42, 0, 1.0,  1.0"
+                    begin="negativeAnimation5.begin+60ms"
+                    dur="1000ms"
+                    fill="freeze"
+                    additive="sum"
+                  />
+                </path>
                 <path
                   d="M568.7,76.88a13.77,13.77,0,0,0,5,1c6.6,0,10.44-6.24,12-58.32L586.22,8h46.2V92H619V24.44H598.82l-0.12,3.12C597.14,81,589,94.4,573.74,94.4a28.55,28.55,0,0,1-6.72-.84Z"
                   transform="translate(-2.16 -1.5)"
                   fill="none"
                   stroke="currentColor"
-                />
+                >
+                  <animate
+                    id="shapeAnimation7"
+                    attributeName="stroke-dasharray"
+                    begin="shapeAnimation6.begin+60ms"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animate
+                    id="shapeOffsetAnimation7"
+                    attributeName="stroke-dashoffset"
+                    begin="shapeAnimation7.begin"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animateTransform
+                    id="negativeAnimation7"
+                    attributeName="transform"
+                    type="translate"
+                    calcMode="spline"
+                    values="0 0; 0 110; 0 100; 0 110"
+                    keyTimes="0; 0.7; 0.85; 1"
+                    keySplines="0.42, 0, 1.0,  1.0;
+                                0,    0, 0.58, 1.0;
+                                0.42, 0, 1.0,  1.0"
+                    begin="negativeAnimation6.begin+60ms"
+                    dur="1000ms"
+                    fill="freeze"
+                    additive="sum"
+                  />
+                </path>
                 <path
                   d="M646.1,70.4L647.54,2H661l1.44,68.4H646.1Zm8.28,6.36c4.8,0,8,3.24,8,8.16a8,8,0,0,1-16.08,0C646.34,80,649.58,76.76,654.38,76.76Z"
                   transform="translate(-2.16 -1.5)"
                   fill="none"
                   stroke="currentColor"
-                />
+                >
+                  <animate
+                    id="shapeAnimation8"
+                    attributeName="stroke-dasharray"
+                    begin="shapeAnimation7.begin+60ms"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animate
+                    id="shapeOffsetAnimation8"
+                    attributeName="stroke-dashoffset"
+                    begin="shapeAnimation8.begin"
+                    dur="500ms"
+                    fill="freeze"
+                  />
+                  <animateTransform
+                    id="negativeAnimation8"
+                    attributeName="transform"
+                    type="translate"
+                    calcMode="spline"
+                    values="0 0; 0 110; 0 100; 0 110"
+                    keyTimes="0; 0.7; 0.85; 1"
+                    keySplines="0.42, 0, 1.0,  1.0;
+                                0,    0, 0.58, 1.0;
+                                0.42, 0, 1.0,  1.0"
+                    begin="negativeAnimation7.begin+60ms"
+                    dur="1000ms"
+                    fill="freeze"
+                    additive="sum"
+                  />
+                </path>
               </svg>
             </h2>
             <button class="result__button js-play" type="button">

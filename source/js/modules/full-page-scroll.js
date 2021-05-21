@@ -7,6 +7,7 @@ export default class FullPageScroll {
     this.THROTTLE_TIMEOUT = 2000;
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
+    this.resultElements = document.querySelectorAll(`.screen.screen--result`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
     this.curtain = document.querySelector(`.curtain`);
 
