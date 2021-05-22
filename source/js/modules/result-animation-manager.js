@@ -33,7 +33,7 @@ class ResultAnimationManager {
     if (this.result === ResultType.WIN) {
       letter.style.setProperty(`--length`, `${length}px`);
     } else {
-      const [strokeDasharrayAnimation, strokeDashoffsetAnimation] = [...letter.querySelectorAll(`animate`)];
+      const [strokeDasharrayAnimation, strokeDashoffsetAnimation] = letter.querySelectorAll(`animate`);
 
       const value = length / this.ANIMATION_POINTS_AMOUNT;
       letter.dataset.length = length;
@@ -57,13 +57,37 @@ class ResultAnimationManager {
     }
   }
 
+  reset() {
+    if (this.result === ResultType.WIN) {
+      this._resetSuccessAnimation();
+    } else if (this.result === ResultType.LOSS) {
+      this._resetWrongAnimation();
+    }
+  }
+
   _animateSuccess() {
     this.title.classList.add(`animated`);
+  }
+
+  _resetSuccessAnimation() {
+    this.title.classList.remove(`animated`);
   }
 
   _animateWrong() {
     const animationElement = this.svg.querySelector(`#negativeAnimation0`);
     animationElement.beginElement();
+  }
+
+  _resetWrongAnimation() {
+    // Пока не придумал более рационального способа
+    // сбросить smil анимацию,
+    // не прописывая обратную с минимальным dur.
+    // Тупо заменяю свг на клон
+    const clone = this.svg.cloneNode(true);
+    this.title.replaceChild(clone, this.svg);
+
+    this.svg = this.title.querySelector(`svg`);
+    this.letters = [...this.svg.querySelectorAll(`path`)];
   }
 }
 

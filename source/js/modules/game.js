@@ -13,6 +13,7 @@ class Game {
   }
 
   start() {
+    this._resetAnimations();
     this.timer.start();
   }
 
@@ -22,7 +23,26 @@ class Game {
 
   _initResultAnimations() {
     this.resultScreens = document.querySelectorAll(`.screen--result`);
-    this.resultAnimations = [...this.resultScreens].map((resultScreen) => new ResultAnimationManager({resultScreen}));
+    const resultAnimations = {
+      [ResultType.WIN]: [],
+      [ResultType.LOSS]: null
+    };
+
+    const flat = [...this.resultScreens].map((resultScreen) => new ResultAnimationManager({resultScreen}));
+
+    const raw = flat.reduce((acc, animation) => {
+      const {result} = animation;
+
+      if (Array.isArray(acc[result])) {
+        acc[result].push(animation);
+      } else {
+        acc[result] = animation;
+      }
+
+      return acc;
+    }, {...resultAnimations});
+
+    this.resultAnimations = {raw, flat};
   }
 
   _initTimer() {
@@ -36,12 +56,29 @@ class Game {
 
   _onLoose() {
     const lossResultScreen = [...this.resultScreens].find((screen) => screen.dataset.result === ResultType.LOSS);
-    const lossResultAnimation = this.resultAnimations.find((resultAnimation) => resultAnimation.result === ResultType.LOSS);
+    const lossResultAnimation = this.resultAnimations.raw[ResultType.LOSS];
 
     lossResultScreen.classList.add(`screen--show`);
     lossResultScreen.classList.remove(`screen--hidden`);
 
     lossResultAnimation.animate();
+  }
+
+  onWin() {
+    // temp
+    const winResultScreen = [...this.resultScreens].find((screen) => screen.dataset.result === ResultType.WIN);
+    const winResultAnimation = this.resultAnimations.raw[ResultType.WIN][0];
+
+    winResultScreen.classList.add(`screen--show`);
+    winResultScreen.classList.remove(`screen--hidden`);
+
+    winResultScreen.getBoundingClientRect(); // reflow
+
+    winResultAnimation.animate();
+  }
+
+  _resetAnimations() {
+    this.resultAnimations.flat.forEach((animation) => animation.reset());
   }
 }
 

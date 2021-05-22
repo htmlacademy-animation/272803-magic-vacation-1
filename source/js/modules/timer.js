@@ -34,7 +34,7 @@ class Timer {
     this.startTimeStamp = Date.now();
     this.currentTimestamp = this.startTimeStamp;
 
-    this.requestId = requestAnimationFrame(this.tick.bind(this));
+    this.requestId = requestAnimationFrame(this._tick.bind(this));
   }
 
   stop() {
@@ -50,8 +50,8 @@ class Timer {
     this._render(Timer.formatTimestamp(this.startTime));
   }
 
-  tick() {
-    this.requestId = requestAnimationFrame(this.tick.bind(this));
+  _tick() {
+    this.requestId = requestAnimationFrame(this._tick.bind(this));
 
     const now = Date.now();
     this.iterationElapsedTime = now - this.currentTimestamp;
