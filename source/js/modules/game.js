@@ -64,19 +64,6 @@ class Game {
     lossResultAnimation.animate();
   }
 
-  onWin() {
-    // temp
-    const winResultScreen = [...this.resultScreens].find((screen) => screen.dataset.result === ResultType.WIN);
-    const winResultAnimation = this.resultAnimations.raw[ResultType.WIN][0];
-
-    winResultScreen.classList.add(`screen--show`);
-    winResultScreen.classList.remove(`screen--hidden`);
-
-    winResultScreen.getBoundingClientRect(); // reflow
-
-    winResultAnimation.animate();
-  }
-
   _resetAnimations() {
     this.resultAnimations.flat.forEach((animation) => animation.reset());
   }
