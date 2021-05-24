@@ -907,8 +907,29 @@
               <span class="visually-hidden">Не угадал!</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 660.77 218.48"
+                viewBox="0 0 664 218.48"
+                opacity="1"
               >
+                <animate
+                  id="showWrongResult"
+                  attributeType="CSS"
+                  attributeName="opacity"
+                  from="0"
+                  to="1"
+                  dur="0.1ms"
+                  begin="negativeAnimation0.begin"
+                  fill="freeze"
+                />
+                <animate
+                  id="hideWrongResult"
+                  attributeType="CSS"
+                  attributeName="opacity"
+                  from="1"
+                  to="0"
+                  dur="0.1ms"
+                  begin="indefinite"
+                  fill="freeze"
+                />
                 <path
                   d="M2.66,92V8H16.1V42.2H53.3V8H66.74V92H53.3V58.64H16.1V92H2.66Z"
                   transform="translate(-2.16 -1.5)"
@@ -942,7 +963,6 @@
                     begin="indefinite"
                     dur="1000ms"
                     fill="freeze"
-                    additive="sum"
                   />
                 </path>
 
@@ -979,7 +999,6 @@
                     begin="negativeAnimation0.begin+60ms"
                     dur="1000ms"
                     fill="freeze"
-                    additive="sum"
                   />
                 </path>
                 <path
@@ -1015,7 +1034,6 @@
                     begin="negativeAnimation1.begin+60ms"
                     dur="1000ms"
                     fill="freeze"
-                    additive="sum"
                   />
                 </path>
                 <path
@@ -1051,7 +1069,6 @@
                     begin="negativeAnimation2.begin+60ms"
                     dur="1000ms"
                     fill="freeze"
-                    additive="sum"
                   />
                 </path>
                 <path
@@ -1087,7 +1104,6 @@
                     begin="negativeAnimation3.begin+60ms"
                     dur="1000ms"
                     fill="freeze"
-                    additive="sum"
                   />
                 </path>
                 <path
@@ -1123,7 +1139,6 @@
                     begin="negativeAnimation4.begin+60ms"
                     dur="1000ms"
                     fill="freeze"
-                    additive="sum"
                   />
                 </path>
                 <path
@@ -1159,7 +1174,6 @@
                     begin="negativeAnimation5.begin+60ms"
                     dur="1000ms"
                     fill="freeze"
-                    additive="sum"
                   />
                 </path>
                 <path
@@ -1195,7 +1209,6 @@
                     begin="negativeAnimation6.begin+60ms"
                     dur="1000ms"
                     fill="freeze"
-                    additive="sum"
                   />
                 </path>
                 <path
@@ -1231,7 +1244,6 @@
                     begin="negativeAnimation7.begin+60ms"
                     dur="1000ms"
                     fill="freeze"
-                    additive="sum"
                   />
                 </path>
               </svg>
