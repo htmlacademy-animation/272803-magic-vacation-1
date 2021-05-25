@@ -1,4 +1,4 @@
-import {MILLISECONDS_PER_MINUTE} from './timer.js';
+import {MILLISECONDS_PER_MINUTE} from './animator.js';
 import Timer from './timer.js';
 import ResultAnimationManager, {ResultType} from './result-animation-manager.js';
 
