@@ -31,7 +31,7 @@
      />
     <g id="body">
 
-      <g id="busket" transform="translate(0 -5) scale(1 0.9) skewX(3)" style="transform-origin: 205px 250px;">
+      <g id="busket" transform="translate(0 -5) translate(205 250) scale(1 0.9) skewX(3) translate(-205 -250)">
         <animateTransform
           attributeName="transform"
           type="translate"
@@ -41,6 +41,17 @@
                         0, 0, 0.58, 1.0"
           dur="1400ms"
           repeatCount="indefinite"
+        />
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          calcMode="spline"
+          values="205 250; 205 250; 205 250"
+          keySplines="0.42, 0, 1.0, 1.0;
+                        0, 0, 0.58, 1.0"
+          dur="1400ms"
+          repeatCount="indefinite"
+          additive="sum"
         />
         <animateTransform
           attributeName="transform"
@@ -64,17 +75,19 @@
           repeatCount="indefinite"
           additive="sum"
         />
-
-        <animate
-          xlink:href="#second-window"
-          attributeType="CSS"
-          attributeName="opacity"
-          from="1"
-          to="0"
-          begin="3500ms"
-          dur="10ms"
-          fill="freeze"
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          calcMode="spline"
+          values="-205 -250; -205 -250; -205 -250"
+          keySplines="0.42, 0, 1.0, 1.0;
+                        0, 0, 0.58, 1.0"
+          dur="1400ms"
+          repeatCount="indefinite"
+          additive="sum"
         />
+
+
 
         <path d="M175.44,249.28h48.36a13.27,13.27,0,0,0,13-10.65l3.74-18.32H172.36v25.89A3.09,3.09,0,0,0,175.44,249.28Z"
           fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
@@ -83,7 +96,17 @@
         <path
           id="second-window"
           d="M204.25,231.88h-2.05a3.45,3.45,0,0,0-3.43,3.45v2.92a3.45,3.45,0,0,0,3.43,3.45h2.05a3.45,3.45,0,0,0,3.43-3.45v-2.92A3.44,3.44,0,0,0,204.25,231.88Z"
-          fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+          fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <animate
+            attributeType="CSS"
+            attributeName="opacity"
+            from="1"
+            to="0"
+            begin="3500ms"
+            dur="10ms"
+            fill="freeze"
+          />
+        </path>
         <path
           d="M185.64,231.88h-2.05a3.45,3.45,0,0,0-3.43,3.45v2.92a3.45,3.45,0,0,0,3.43,3.45h2.05a3.45,3.45,0,0,0,3.43-3.45v-2.92A3.45,3.45,0,0,0,185.64,231.88Z"
           fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
@@ -455,7 +478,7 @@
           stroke-linejoin="round" stroke-width="2" />
       </g>
     </g>
-    <g id="window-frame" style="transform-origin: 269px 191.5px;" transform="translate(-65 46) scale(0.2)" opacity="0">
+    <g id="window-frame" transform="translate(-65 46) translate(269 191.5) scale(0.2) translate(-269 -191.5)" opacity="0">
       <animate
         attributeType="CSS"
         attributeName="opacity"
@@ -477,6 +500,17 @@
       />
       <animateTransform
         attributeName="transform"
+        type="translate"
+        begin="3500ms"
+        calcMode="spline"
+        values="269 191.5; 269 191.5"
+        keySplines="0, 0, 0.58, 1.0"
+        dur="500ms"
+        fill="freeze"
+        additive="sum"
+      />
+      <animateTransform
+        attributeName="transform"
         type="scale"
         begin="3500ms"
         calcMode="spline"
@@ -485,6 +519,17 @@
         dur="500ms"
         additive="sum"
         fill="freeze"
+      />
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        begin="3500ms"
+        calcMode="spline"
+        values="-269 -191.5; -269 -191.5"
+        keySplines="0, 0, 0.58, 1.0"
+        dur="500ms"
+        fill="freeze"
+        additive="sum"
       />
       <g>
         <path

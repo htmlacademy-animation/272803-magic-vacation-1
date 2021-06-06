@@ -193,7 +193,7 @@
 
   </g>
 
-  <g id="plant-front" transform="rotate(7 245 329)">
+  <g id="plant-front" transform="rotate(6 245 329)">
     <animateTransform
       attributeName="transform"
       type="rotate"
