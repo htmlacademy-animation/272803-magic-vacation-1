@@ -71,6 +71,7 @@
 }
 
 .game__counter {
+  width: 11.2rem;
   margin: 0;
   text-transform: uppercase;
   font-family: $font-alt;
@@ -78,6 +79,7 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: 0;
+  text-align: left;
 
   @media (min-width: $stop-scaling) {
     font-size: 48px;
@@ -90,14 +92,17 @@
   @media (max-width: $tablet) and (orientation: portrait) {
     margin-bottom: 1.8rem;
     font-size: 3.6rem;
+    width: 8.4rem;
   }
 
   @media (max-width: $tablet) and (orientation: landscape) {
+    width: 7rem;
     font-size: 3rem;
     margin-bottom: 2rem;
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
+    width: 4.7rem;
     font-size: 2rem;
     margin-bottom: 1rem;
   }

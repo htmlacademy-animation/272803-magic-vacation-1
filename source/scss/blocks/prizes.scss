@@ -154,6 +154,10 @@
         width: 10rem;
       }
     }
+
+    .prizes__desc b {
+      min-width: 7.5rem;
+    }
   }
 
   &--cases {
@@ -188,6 +192,10 @@
         width: 7rem;
       }
     }
+
+    .prizes__desc b {
+      min-width: 7.5rem;
+    }
   }
 
   &--codes {
@@ -213,6 +221,10 @@
       @media (max-width: $mobile) and (orientation: landscape) {
         width: 10rem;
       }
+    }
+
+    .prizes__desc b {
+      min-width: 19.5rem;
     }
   }
 }
@@ -265,6 +277,7 @@
     font-weight: 400;
     font-size: 12rem;
     line-height: 0.55;
+    text-align: right;
 
     @media (min-width: $stop-scaling) {
       font-size: 120px;

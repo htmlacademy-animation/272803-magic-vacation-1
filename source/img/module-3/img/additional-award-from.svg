@@ -46,13 +46,13 @@
       dur="1ms"
       fill="freeze"
     />
-    <g id="flowers" style="transform-origin: 178px 289px;" transform="rotate(50)">
+    <g id="flowers" transform="rotate(50 178 289)">
 
       <animateTransform
         attributeName="transform"
         type="rotate"
         calcMode="spline"
-        values="50; 20; -10; -3.5; 3; 0.5; -2; -1; 0"
+        values="50 178 289; 20 178 289; -10 178 289; -3.5 178 289; 3 178 289; 0.5 178 289; -2 178 289; -1 178 289; 0 178 289"
         keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1"
         keySplines="0.42 0  1.0   1.0;
                     0    0, 0.58, 1.0;
@@ -61,19 +61,19 @@
                     0.42 0  1.0   1.0;
                     0    0, 0.58, 1.0;
                     0.42 0  1.0   1.0;
-                    0    0, 0.58, 1.0;"
+                    0    0, 0.58, 1.0"
         begin="500ms"
         dur="1450ms"
         fill="freeze"
       />
       <g id="flower-large">
         <path d="M180.73,277.8s8.3-74.59,39.71-90" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-        <path id="flower-large-bud" style="transform-origin: 218px 189px;" transform="rotate(30)" d="M217.95,187.12l9.27-24.49a22,22,0,0,1,8.72,3,7.87,7.87,0,0,1,9.72,12.33,22.14,22.14,0,0,1,.86,9.18l-26,3.3a2.45,2.45,0,0,1-2.6-3.29" fill="#3b7bf2">
+        <path id="flower-large-bud" transform="rotate(30 218 189)" d="M217.95,187.12l9.27-24.49a22,22,0,0,1,8.72,3,7.87,7.87,0,0,1,9.72,12.33,22.14,22.14,0,0,1,.86,9.18l-26,3.3a2.45,2.45,0,0,1-2.6-3.29" fill="#3b7bf2">
           <animateTransform
             attributeName="transform"
             type="rotate"
-            from="30"
-            to="0"
+            from="30 218 189"
+            to="0 218 189"
             begin="500ms"
             dur="300ms"
             fill="freeze"
@@ -83,12 +83,12 @@
 
       <g id="flower-small">
         <path d="M178.24,287.63s6.89-44.68,37.95-56.53" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-        <path id="flower-small-bud" style="transform-origin: 211px 233px;" transform="rotate(30)" d="M210.85,232l9-16.47a16.66,16.66,0,0,1,6.13,2.93,5.93,5.93,0,0,1,4-.42,5.67,5.67,0,0,1,4.26,6.85,5.54,5.54,0,0,1-2.29,3.23,15.1,15.1,0,0,1-.21,6.58l-19.34-.11a1.76,1.76,0,0,1-1.6-2.58" fill="#3b7bf2">
+        <path id="flower-small-bud" transform="rotate(30 211 233)" d="M210.85,232l9-16.47a16.66,16.66,0,0,1,6.13,2.93,5.93,5.93,0,0,1,4-.42,5.67,5.67,0,0,1,4.26,6.85,5.54,5.54,0,0,1-2.29,3.23,15.1,15.1,0,0,1-.21,6.58l-19.34-.11a1.76,1.76,0,0,1-1.6-2.58" fill="#3b7bf2">
           <animateTransform
             attributeName="transform"
             type="rotate"
-            from="30"
-            to="0"
+            from="30 211 233"
+            to="0 211 233"
             begin="500ms"
             dur="300ms"
             fill="freeze"
@@ -97,7 +97,7 @@
       </g>
     </g>
     <g id="balloon">
-      <g id="balloon-round" style="transform-origin: 108px 165px;" transform="translate(0 158) rotate(46)">
+      <g id="balloon-round" transform="translate(0 158) rotate(46 108 165)">
         <animateTransform
           attributeName="transform"
           type="translate"
@@ -119,7 +119,7 @@
           attributeName="transform"
           type="rotate"
           calcMode="spline"
-          values="46; -14; 5; -6; 3; 0; 0"
+          values="46 108 165; -14 108 165; 5 108 165; -6 108 165; 3 108 165; 0 108 165; 0 108 165"
           keyTimes="0; 0.368; 0.5; 0.737; 0.9; 0.95; 1"
           keySplines="0 0 1 1;
                       0 0 1 1;
@@ -179,18 +179,18 @@
       </line>
     </g>
 
-    <g id="leaves-left" style="transform-origin: 178px 289px;" transform="rotate(64)">
+    <g id="leaves-left" transform="rotate(64 178 289)">
       <animateTransform
         id="leavesLeftUp"
         attributeName="transform"
         type="rotate"
         calcMode="spline"
-        values="64; 29; -8; -3; 1.5"
+        values="64 178 289; 29 178 289; -8 178 289; -3 178 289; 1.5 178 289"
         keyTimes="0; 0.25; 0.5; 0.75; 1"
         keySplines="0.42 0  1.0   1.0;
                     0    0, 0.58, 1.0;
                     0.42 0  1.0   1.0;
-                    0    0, 0.58, 1.0;"
+                    0    0, 0.58, 1.0"
         begin="500ms"
         dur="800ms"
         fill="freeze"
@@ -199,7 +199,7 @@
         attributeName="transform"
         type="rotate"
         calcMode="spline"
-        values="1.5; 0; -1.5; 0; 1.5"
+        values="1.5 178 289; 0 178 289; -1.5 178 289; 0 178 289; 1.5 178 289"
         keyTimes="0; 0.25; 0.5; 0.75; 1"
         keySplines="0.42 0  1.0   1.0;
                     0    0, 0.58, 1.0;
@@ -217,7 +217,7 @@
       <path d="M166.1,232.52c-3.41,9.36.47,19.35,0.47,19.35s9.39-5.18,12.79-14.53S178.89,218,178.89,218s-9.39,5.18-12.79,14.53" fill="#1553b7"/>
       <path d="M147.22,252.35c9.36,3.4,19.35-.47,19.35-0.47s-5.18-9.39-14.54-12.79-19.35.47-19.35,0.47,5.18,9.39,14.54,12.79" fill="#1553b7"/>
     </g>
-    <g id="leaves-right" style="transform-origin: 178px 289px;" transform="translate(0, 2) rotate(38)">
+    <g id="leaves-right" transform="translate(0, 2) rotate(38 178 289)">
       <animateTransform
         attributeName="transform"
         type="translate"
@@ -232,12 +232,12 @@
         attributeName="transform"
         type="rotate"
         calcMode="spline"
-        values="38; 12; -14; -5; 4"
+        values="38 178 289; 12 178 289; -14 178 289; -5 178 289; 4 178 289"
         keyTimes="0; 0.25; 0.5; 0.75; 1"
         keySplines="0.42 0  1.0   1.0;
                     0    0, 0.58, 1.0;
                     0.42 0  1.0   1.0;
-                    0    0, 0.58, 1.0;"
+                    0    0, 0.58, 1.0"
         begin="500ms"
         dur="1000ms"
         fill="freeze"
@@ -247,7 +247,7 @@
         attributeName="transform"
         type="rotate"
         calcMode="spline"
-        values="4; 2; 0; 2; 4"
+        values="4 178 289; 2 178 289; 0 178 289; 2 178 289; 4 178 289"
         keyTimes="0; 0.25; 0.5; 0.75; 1"
         keySplines="0.42 0  1.0   1.0;
                     0    0, 0.58, 1.0;
@@ -264,7 +264,7 @@
       <path d="M203.69,264.19c-6.17,7.08-16.19,8.44-16.19,8.44s0-10.11,6.16-17.18S209.85,247,209.85,247s0,10.11-6.16,17.19" fill="#76abff"/>
     </g>
 
-    <g id="bird" style="transform-origin: 282px 185px;" transform="translate(-50 70) rotate(-35)">
+    <g id="bird" transform="translate(-50 70) rotate(-35 282 185)">
       <animateTransform
         id="getOut"
         attributeName="transform"
@@ -294,7 +294,7 @@
       <animateTransform
         attributeName="transform"
         type="rotate"
-        values="0; -35; -35; 0; 0"
+        values="0 282 185; -35 282 185; -35 282 185; 0 282 185; 0 282 185"
         keyTimes="0; 0.15; 0.5; 0.65; 1"
         keySplines="0 0 1 1;
                     0 0 1 1;
@@ -306,7 +306,7 @@
         repeatCount="indefinite"
         additive="sum"
       />
-      <path id="bird-wing" opacity="0" style="transform-origin: 282px 185px;" transform="translate(-5, 0) rotate(-20) scale(0.75)" d="M279.2,183.8A4.89,4.89,0,0,1,283,179h0l21.07-5.4c-7.78,14.84-19.18,15.07-20,15.07h0a4.9,4.9,0,0,1-4.85-4.9" fill="#fff">
+      <path id="bird-wing" opacity="0" transform="translate(-5, 0) rotate(-20 282 185) translate(-277 -185) scale(0.75) translate(277 185)" d="M279.2,183.8A4.89,4.89,0,0,1,283,179h0l21.07-5.4c-7.78,14.84-19.18,15.07-20,15.07h0a4.9,4.9,0,0,1-4.85-4.9" fill="#fff">
         <animate
           attributeType="CSS"
           attributeName="opacity"
@@ -332,11 +332,22 @@
           attributeName="transform"
           type="rotate"
           calcMode="discrete"
-          values="-20; -5; -20"
+          values="-20 282 185; -5 282 185; -20 282 185"
           keyTimes="0; 0.5; 1"
           begin="500ms"
           dur="150ms"
           additive="sum"
+          fill="freeze"
+          repeatCount="indefinite"
+        />
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          calcMode="discrete"
+          values="71.75 46.25; 0 0; 71.25 46.25"
+          keyTimes="0; 0.5; 1"
+          begin="500ms"
+          dur="150ms"
           fill="freeze"
           repeatCount="indefinite"
         />
